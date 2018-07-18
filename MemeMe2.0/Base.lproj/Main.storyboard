@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="-587" y="-383"/>
         </scene>
-        <!--Saved Memes Collection View Controller-->
+        <!--Saved Memes-->
         <scene sceneID="zoh-cq-cdv">
             <objects>
                 <collectionViewController id="hWH-Q4-0xb" customClass="SavedMemesCollectionViewController" customModule="MemeMe2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                             <outlet property="delegate" destination="hWH-Q4-0xb" id="yE4-mm-CRm"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="CXM-Oi-0Fa">
+                    <navigationItem key="navigationItem" title="Saved Memes" id="CXM-Oi-0Fa">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="O1l-PI-7D2">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="DnA-IL-aa1"/>
@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="161" y="-383"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Saved Memes-->
         <scene sceneID="JPS-0A-2Gj">
             <objects>
                 <tableViewController id="gUL-Br-GgK" customClass="SavedMemesTableViewController" customModule="MemeMe2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <outlet property="delegate" destination="gUL-Br-GgK" id="tly-SW-jIe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="BbP-hY-QrH">
+                    <navigationItem key="navigationItem" title="Saved Memes" id="BbP-hY-QrH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WPl-Gq-A88">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="gdR-II-vjX"/>
@@ -170,6 +170,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gdR-II-vjX"/>
+        <segue reference="DnA-IL-aa1"/>
     </inferredMetricsTieBreakers>
 </document>
