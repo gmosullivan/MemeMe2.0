@@ -10,6 +10,8 @@ import UIKit
 
 class MemeDetailViewController: UIViewController {
 
+    @IBOutlet weak var savedMemeImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
