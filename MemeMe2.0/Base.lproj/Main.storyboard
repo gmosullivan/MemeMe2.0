@@ -74,7 +74,13 @@
                             <outlet property="delegate" destination="hWH-Q4-0xb" id="yE4-mm-CRm"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="CXM-Oi-0Fa"/>
+                    <navigationItem key="navigationItem" id="CXM-Oi-0Fa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="O1l-PI-7D2">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="DnA-IL-aa1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zu0-vw-1VT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,7 +109,13 @@
                             <outlet property="delegate" destination="gUL-Br-GgK" id="tly-SW-jIe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="BbP-hY-QrH"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="BbP-hY-QrH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WPl-Gq-A88">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="gdR-II-vjX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmM-M6-yNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,4 +154,7 @@
             <point key="canvasLocation" x="913" y="-383"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DnA-IL-aa1"/>
+    </inferredMetricsTieBreakers>
 </document>
