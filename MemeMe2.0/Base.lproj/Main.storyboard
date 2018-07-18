@@ -160,13 +160,27 @@
                     <view key="view" contentMode="scaleToFill" id="PVt-YD-rZU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AsO-nO-FSo">
+                                <rect key="frame" x="16" y="60" width="288" height="458"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nK3-om-l1a" firstAttribute="bottom" secondItem="AsO-nO-FSo" secondAttribute="bottom" constant="50" id="IxV-GG-MTh"/>
+                            <constraint firstItem="AsO-nO-FSo" firstAttribute="top" secondItem="nK3-om-l1a" secondAttribute="top" constant="40" id="NKb-4j-JDm"/>
+                            <constraint firstItem="nK3-om-l1a" firstAttribute="trailing" secondItem="AsO-nO-FSo" secondAttribute="trailing" constant="16" id="Tgl-N0-cRd"/>
+                            <constraint firstItem="AsO-nO-FSo" firstAttribute="leading" secondItem="nK3-om-l1a" secondAttribute="leading" constant="16" id="sPi-lw-w7B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nK3-om-l1a"/>
                     </view>
+                    <connections>
+                        <outlet property="savedMemeImageView" destination="AsO-nO-FSo" id="WzG-em-QR7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oi3-1m-R7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="-46"/>
+            <point key="canvasLocation" x="1860" y="-46.478873239436624"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
