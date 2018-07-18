@@ -97,6 +97,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="wvr-pe-kZT" id="wGs-sE-V2J"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zu0-vw-1VT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
