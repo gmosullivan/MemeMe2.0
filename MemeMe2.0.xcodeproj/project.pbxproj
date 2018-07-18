@@ -13,6 +13,7 @@
 		7F3FFAC320FF19E5001F8C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F3FFAC220FF19E5001F8C34 /* Assets.xcassets */; };
 		7F3FFAC620FF19E5001F8C34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3FFAC420FF19E5001F8C34 /* LaunchScreen.storyboard */; };
 		7F3FFACE20FF1A1B001F8C34 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3FFACD20FF1A1B001F8C34 /* Meme.swift */; };
+		7F3FFAD020FF1FD5001F8C34 /* SavedMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3FFACF20FF1FD5001F8C34 /* SavedMemesCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7F3FFAC520FF19E5001F8C34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F3FFAC720FF19E5001F8C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F3FFACD20FF1A1B001F8C34 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		7F3FFACF20FF1FD5001F8C34 /* SavedMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMemesCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				7F3FFACD20FF1A1B001F8C34 /* Meme.swift */,
 				7F3FFABB20FF19E5001F8C34 /* AppDelegate.swift */,
 				7F3FFABD20FF19E5001F8C34 /* MemeCreatorViewController.swift */,
+				7F3FFACF20FF1FD5001F8C34 /* SavedMemesCollectionViewController.swift */,
 				7F3FFABF20FF19E5001F8C34 /* Main.storyboard */,
 				7F3FFAC220FF19E5001F8C34 /* Assets.xcassets */,
 				7F3FFAC420FF19E5001F8C34 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F3FFAD020FF1FD5001F8C34 /* SavedMemesCollectionViewController.swift in Sources */,
 				7F3FFACE20FF1A1B001F8C34 /* Meme.swift in Sources */,
 				7F3FFABE20FF19E5001F8C34 /* MemeCreatorViewController.swift in Sources */,
 				7F3FFABC20FF19E5001F8C34 /* AppDelegate.swift in Sources */,

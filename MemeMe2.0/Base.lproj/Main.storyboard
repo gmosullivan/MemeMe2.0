@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="-587" y="-383"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Saved Memes Collection View Controller-->
         <scene sceneID="zoh-cq-cdv">
             <objects>
-                <collectionViewController id="hWH-Q4-0xb" sceneMemberID="viewController">
+                <collectionViewController id="hWH-Q4-0xb" customClass="SavedMemesCollectionViewController" customModule="MemeMe2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bJJ-15-55Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
