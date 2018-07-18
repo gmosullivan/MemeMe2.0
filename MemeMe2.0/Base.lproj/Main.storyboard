@@ -151,10 +151,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="-383"/>
+            <point key="canvasLocation" x="1052" y="-46"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="FQO-3R-gUi">
+            <objects>
+                <viewController id="FxG-d1-CDy" customClass="MemeDetailViewController" customModule="MemeMe2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PVt-YD-rZU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="nK3-om-l1a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oi3-1m-R7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="-46"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DnA-IL-aa1"/>
+        <segue reference="gdR-II-vjX"/>
     </inferredMetricsTieBreakers>
 </document>
