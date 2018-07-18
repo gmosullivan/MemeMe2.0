@@ -8,13 +8,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class SavedMemesCollectionViewController: UICollectionViewController {
 
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let cellIdentifier = "CollectionViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,7 @@ class SavedMemesCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
     
         // Configure the cell
     
