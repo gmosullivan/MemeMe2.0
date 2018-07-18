@@ -10,6 +10,8 @@ import UIKit
 
 class SavedMemesTableViewController: UITableViewController {
 
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

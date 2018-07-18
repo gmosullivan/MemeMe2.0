@@ -12,6 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class SavedMemesCollectionViewController: UICollectionViewController {
 
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
