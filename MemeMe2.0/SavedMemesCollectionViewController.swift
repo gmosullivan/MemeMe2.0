@@ -22,12 +22,12 @@ class SavedMemesCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let space: CGFloat = 3.0
-        let width = (view.frame.size.width - (2 * space))
-        let height = (view.frame.size.height - (2 * space))
+        let width = (view.frame.size.width - (2 * space)) / 3
+        let height = (view.frame.size.height - (2 * space)) / 6
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: width, height: height)
-        let anotherMeme = Meme(topText: "Put 5 dollars in pocket", bottomText: "Pull out 10", originalImage: UIImage(named: "originalImage")!, memedImage: UIImage(named: "memedImage")!)
+        let anotherMeme = Meme(topText: "Put 5 dollars in pocket", bottomText: "Pull out 10", originalImage: UIImage(named: "originalImage")!, memedImage: UIImage(named: "originalImage")!)
         appDelegate.Memes.append(anotherMeme)
         let anotherNewMeme = Meme(topText: "Put 5 dollars in pocket", bottomText: "Pull out 10", originalImage: UIImage(named: "originalImage")!, memedImage: UIImage(named: "memedImage")!)
         appDelegate.Memes.append(anotherNewMeme)
@@ -46,6 +46,13 @@ class SavedMemesCollectionViewController: UICollectionViewController {
         let savedMeme = appDelegate.Memes[indexPath.row]
         cell.cellImageView.image = savedMeme.memedImage
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        let savedMeme = appDelegate.Memes[indexPath.row]
+        controller.savedMeme = savedMeme.memedImage
+        navigationController?.pushViewController(controller, animated: true)
     }
 
 }
