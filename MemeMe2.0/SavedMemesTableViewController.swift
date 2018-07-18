@@ -14,8 +14,6 @@ class SavedMemesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let newMeme = Meme(topText: "Put 5 dollars in pocket", bottomText: "Pull out 10", originalImage: UIImage(named: "originalImage")!, memedImage: UIImage(named: "memedImage")!)
-        appDelegate.Memes.append(newMeme)
     }
 
     // MARK: - Table view data source

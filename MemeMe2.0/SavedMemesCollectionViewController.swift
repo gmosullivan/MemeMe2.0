@@ -27,14 +27,6 @@ class SavedMemesCollectionViewController: UICollectionViewController {
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: width, height: height)
-        let anotherMeme = Meme(topText: "Put 5 dollars in pocket", bottomText: "Pull out 10", originalImage: UIImage(named: "originalImage")!, memedImage: UIImage(named: "originalImage")!)
-        appDelegate.Memes.append(anotherMeme)
-        let anotherNewMeme = Meme(topText: "Put 5 dollars in pocket", bottomText: "Pull out 10", originalImage: UIImage(named: "originalImage")!, memedImage: UIImage(named: "memedImage")!)
-        appDelegate.Memes.append(anotherNewMeme)
-        let andAnotherMeme = Meme(topText: "Put 5 dollars in pocket", bottomText: "Pull out 10", originalImage: UIImage(named: "originalImage")!, memedImage: UIImage(named: "memedImage")!)
-        appDelegate.Memes.append(andAnotherMeme)
-        let oneMoreMeme = Meme(topText: "Put 5 dollars in pocket", bottomText: "Pull out 10", originalImage: UIImage(named: "originalImage")!, memedImage: UIImage(named: "memedImage")!)
-        appDelegate.Memes.append(oneMoreMeme)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
