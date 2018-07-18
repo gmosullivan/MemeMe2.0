@@ -34,10 +34,9 @@ class SavedMemesCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CollectionViewCell
+        let savedMeme = appDelegate.Memes[indexPath.row]
+        cell.cellImageView.image = savedMeme.memedImage
         return cell
     }
 
