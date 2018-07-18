@@ -29,5 +29,12 @@ class SavedMemesTableViewController: UITableViewController {
         cell.textLabel?.text = savedMeme.topText + savedMeme.bottomText
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        let savedMeme = appDelegate.Memes[indexPath.row]
+        controller.savedMeme = savedMeme.memedImage
+        navigationController?.pushViewController(controller, animated: true)
+    }
 
 }

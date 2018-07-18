@@ -12,7 +12,7 @@ class MemeDetailViewController: UIViewController {
 
     @IBOutlet weak var savedMemeImageView: UIImageView!
     
-    let savedMeme: UIImage!
+    var savedMeme: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
