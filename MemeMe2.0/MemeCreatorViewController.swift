@@ -11,13 +11,15 @@ import UIKit
 class MemeCreatorViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
