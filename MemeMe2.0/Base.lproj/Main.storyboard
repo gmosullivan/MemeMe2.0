@@ -164,9 +164,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKj-dH-dc6">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="f4p-cm-5WP"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" id="YXj-K1-4g8"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FKj-dH-dc6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G9p-Fa-Zsb"/>
+                            <constraint firstAttribute="bottom" secondItem="FKj-dH-dc6" secondAttribute="bottom" id="VQf-Zl-DIt"/>
+                            <constraint firstAttribute="trailing" secondItem="FKj-dH-dc6" secondAttribute="trailing" id="sEM-3e-aPf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="toolbar" destination="FKj-dH-dc6" id="Jq7-A9-2bn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
