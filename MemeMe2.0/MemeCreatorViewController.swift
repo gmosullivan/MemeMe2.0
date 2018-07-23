@@ -33,7 +33,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
         navigationItem.rightBarButtonItem?.isEnabled = false
         tabBarController?.tabBar.isHidden = true
-        let photoLibraryButton = UIBarButtonItem(title: "Choose", style: .plain, target: self, action: nil)
+        let photoLibraryButton = UIBarButtonItem(title: "Choose", style: .plain, target: self, action: #selector(pickImageFromLibrary))
         let cameraButton = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: nil)
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let items = [photoLibraryButton, flexibleSpace, cameraButton]
@@ -59,7 +59,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         textField.adjustsFontSizeToFitWidth = true
     }
     
-    func getKeyboardHeight(_ notification: Notification) -> CGRect {
+    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CG Rect
         return keyboardSize.cgRectValue.height
@@ -88,15 +88,15 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
     @objc func pickImageFromLibrary() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        imagePicker.source = .photoLibrary
+        imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
     
-    override func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
     }
     
-    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         resignFirstResponder()
         return true
     }
