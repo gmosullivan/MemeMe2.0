@@ -250,11 +250,27 @@
                     </view>
                     <connections>
                         <outlet property="savedMemeImageView" destination="AsO-nO-FSo" id="WzG-em-QR7"/>
+                        <segue destination="QnH-rg-CCR" kind="show" identifier="EditMeme" id="MnT-c3-h1Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oi3-1m-R7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1860" y="-46.478873239436624"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bFd-wx-u9i">
+            <objects>
+                <viewController id="QnH-rg-CCR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iMs-dw-h98">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="0VO-Cg-Oaw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0CT-0e-Iq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2691" y="-46"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
