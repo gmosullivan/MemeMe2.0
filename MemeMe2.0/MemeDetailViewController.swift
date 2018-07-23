@@ -32,4 +32,8 @@ class MemeDetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: nil)
     }
     
+    @objc func editMeme() {
+        performSegue(withIdentifier: "EditMeme", sender: nil)
+    }
+    
 }
