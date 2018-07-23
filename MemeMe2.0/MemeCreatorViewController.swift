@@ -10,6 +10,9 @@ import UIKit
 
 class MemeCreatorViewController: UIViewController {
     
+    @IBOutlet weak var imageForMemeImageView: UIImageView!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var toolbar:UIToolbar!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
