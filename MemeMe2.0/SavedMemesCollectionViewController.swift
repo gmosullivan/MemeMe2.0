@@ -41,7 +41,7 @@ class SavedMemesCollectionViewController: UICollectionViewController {
         return appDelegate.Memes.count
     }
     
-    // MARK: - Collection View Data Source Methods
+    // MARK: - Collection View Data Source Functions
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CollectionViewCell
@@ -50,7 +50,7 @@ class SavedMemesCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    // MARK: - Collection View Delegate Methods
+    // MARK: - Collection View Delegate Functions
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController

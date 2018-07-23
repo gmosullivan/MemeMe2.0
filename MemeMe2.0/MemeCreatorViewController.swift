@@ -10,14 +10,20 @@ import UIKit
 
 class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    // MARK: Outlets
+    
     @IBOutlet weak var imageForMemeImageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var toolbar:UIToolbar!
     
+    // MARK: Variables and Constants
+    
     var memedImage: UIImage?
     var imageSelected = false
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,8 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         unsubscribeToKeyboardNotifications()
     }
     
+    // MARK: - Meme Functions
+    
     func save() {
         let memeToSave = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageForMemeImageView.image!, memedImage: memedImage!)
         appDelegate.Memes.append(memeToSave)
@@ -61,6 +69,8 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         return generatedMeme
     }
     
+    // MARK: - UI functions
+    
     func configureTextField(_ textField: UITextField, withText: String) {
         let memeAttributes:[String: Any] = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
@@ -74,10 +84,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         textField.adjustsFontSizeToFitWidth = true
     }
     
-    func hideBars(_ isHidden: Bool) {
-        navigationController?.navigationBar.isHidden = isHidden
-        toolbar.isHidden = isHidden
-    }
+    // MARK: - Keyboard Notification Functions
     
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
         let userInfo = notification.userInfo
@@ -105,6 +112,22 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
+    // MARK: - Helper Functions to Avoid Repetition
+    
+    func presentImagePickerWith(sourceType: UIImagePickerControllerSourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func hideBars(_ isHidden: Bool) {
+        navigationController?.navigationBar.isHidden = isHidden
+        toolbar.isHidden = isHidden
+    }
+    
+    // MARK: - Action Button Functions (objective c)
+    
     @objc func pickImageFromLibrary() {
         presentImagePickerWith(sourceType: .photoLibrary)
     }
@@ -129,12 +152,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         present(activityController, animated: true, completion: nil)
     }
     
-    func presentImagePickerWith(sourceType: UIImagePickerControllerSourceType) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        imagePicker.sourceType = sourceType
-        present(imagePicker, animated: true, completion: nil)
-    }
+    // MARK: - Text Field Delegate Functions
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
@@ -144,6 +162,8 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         textField.resignFirstResponder()
         return true
     }
+    
+    // MARK: - Image Picker Delegate Functions
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {

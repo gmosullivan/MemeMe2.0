@@ -10,9 +10,15 @@ import UIKit
 
 class MemeDetailViewController: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var savedMemeImageView: UIImageView!
     
+    // MARK: - Variables and Constants
+    
     var savedMeme: UIImage!
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

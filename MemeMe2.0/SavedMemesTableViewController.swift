@@ -10,7 +10,7 @@ import UIKit
 
 class SavedMemesTableViewController: UITableViewController {
 
-    // Constants and Variables
+    // Variables and Constants
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -26,7 +26,7 @@ class SavedMemesTableViewController: UITableViewController {
         tabBarController?.tabBar.isHidden = false
     }
 
-    // MARK: - Table View Data Source Methods
+    // MARK: - Table View Data Source Functions
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appDelegate.Memes.count
@@ -40,7 +40,7 @@ class SavedMemesTableViewController: UITableViewController {
         return cell
     }
     
-    // MARK: - Table View Delegate Methods
+    // MARK: - Table View Delegate Functions
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
