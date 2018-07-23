@@ -16,8 +16,7 @@ class MemeDetailViewController: UIViewController {
     
     // MARK: - Variables and Constants
     
-    var memeToDisplay: Meme!
-    var savedMeme: UIImage!
+    var savedMeme: Meme!
     
     // MARK: - Life Cycle
     
@@ -28,7 +27,7 @@ class MemeDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let savedMeme = savedMeme {
-            savedMemeImageView.image = savedMeme
+            savedMemeImageView.image = savedMeme.memedImage
         }
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: nil)
     }

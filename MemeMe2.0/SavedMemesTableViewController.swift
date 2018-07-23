@@ -56,7 +56,7 @@ class SavedMemesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
         let savedMeme = appDelegate.Memes[indexPath.row]
-        controller.savedMeme = savedMeme.memedImage
+        controller.savedMeme = savedMeme
         navigationController?.pushViewController(controller, animated: true)
     }
 
