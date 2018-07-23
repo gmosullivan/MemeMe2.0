@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeCreatorViewController: UIViewController {
+class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var imageForMemeImageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
@@ -19,9 +19,13 @@ class MemeCreatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topTextField.delegate = self
+        bottomTextField.delegate = self
         configureTextField(topTextField, withText: "TOP")
         configureTextField(bottomTextField, withText: "BOTTOM")
     }
+    
+    //Edit camera button
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,6 +37,7 @@ class MemeCreatorViewController: UIViewController {
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let items = [photoLibraryButton, flexibleSpace, cameraButton]
         toolbar.setItems(items, animated: false)
+        cameraButton.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,6 +55,15 @@ class MemeCreatorViewController: UIViewController {
         textField.textAlignment = .center
         textField.text = withText
         textField.adjustsFontSizeToFitWidth = true
+    }
+    
+    override func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+    }
+    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        resignFirstResponder()
+        return true
     }
 
 }
