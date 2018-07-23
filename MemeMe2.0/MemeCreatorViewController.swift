@@ -63,6 +63,16 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
         return keyboardSize.cgRectValue.height
     }
     
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if bottomTextField.isEditing {
+            view.frame.origin.y = -1 * getKeyboardHeight(notification)
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        view.frame.origin.y = 0
+    }
+    
     func subscribeToKeyboardNotifications() {
         
     }
