@@ -106,7 +106,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        resignFirstResponder()
+        textField.resignFirstResponder()
         return true
     }
     
