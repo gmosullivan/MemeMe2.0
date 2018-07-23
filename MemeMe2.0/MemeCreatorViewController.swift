@@ -29,7 +29,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme))
         navigationItem.rightBarButtonItem?.isEnabled = false
         tabBarController?.tabBar.isHidden = true
         let photoLibraryButton = UIBarButtonItem(title: "Choose", style: .plain, target: self, action: #selector(pickImageFromLibrary))
