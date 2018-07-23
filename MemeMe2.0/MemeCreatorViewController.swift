@@ -57,6 +57,14 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
         textField.adjustsFontSizeToFitWidth = true
     }
     
+    func subscribeToKeyboardNotifications() {
+        
+    }
+    
+    func unsubscribeToKeyboardNotifications() {
+        
+    }
+    
     override func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
     }
