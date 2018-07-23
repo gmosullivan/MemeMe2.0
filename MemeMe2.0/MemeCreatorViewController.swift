@@ -86,10 +86,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
     }
     
     @objc func pickImageFromLibrary() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        presentImagePickerWith(sourceType: .photoLibrary)
     }
     
     @objc func takeNewImage() {
