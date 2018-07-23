@@ -11,9 +11,13 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: - Variables and Constants
+    
     var window: UIWindow?
     var Memes = [Meme]()
 
+    // MARK - Delegate Methods
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
