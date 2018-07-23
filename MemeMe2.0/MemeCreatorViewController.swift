@@ -29,6 +29,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
         navigationItem.rightBarButtonItem?.isEnabled = false
         tabBarController?.tabBar.isHidden = true
@@ -42,6 +43,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        unsubscribeToKeyboardNotifications()
     }
     
     func configureTextField(_ textField: UITextField, withText: String) {
@@ -74,11 +76,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
     }
     
     func subscribeToKeyboardNotifications() {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     func unsubscribeToKeyboardNotifications() {
-        
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
     override func textFieldDidBeginEditing(_ textField: UITextField) {
