@@ -36,4 +36,9 @@ class MemeDetailViewController: UIViewController {
         performSegue(withIdentifier: "EditMeme", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! MemeEditorViewController
+        controller.memeToEdit = savedMeme
+    }
+    
 }
