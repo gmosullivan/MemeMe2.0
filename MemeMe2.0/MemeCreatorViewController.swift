@@ -15,6 +15,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var toolbar:UIToolbar!
     
+    var memedImage: UIImage?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
