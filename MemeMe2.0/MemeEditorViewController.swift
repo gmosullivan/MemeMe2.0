@@ -12,4 +12,9 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     var memeToEdit: Meme!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.title = "Edit Meme"
+    }
+    
 }

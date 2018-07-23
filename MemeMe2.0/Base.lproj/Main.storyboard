@@ -257,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="1860" y="-46.478873239436624"/>
         </scene>
-        <!--View Controller-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="bFd-wx-u9i">
             <objects>
-                <viewController id="QnH-rg-CCR" sceneMemberID="viewController">
+                <viewController id="QnH-rg-CCR" customClass="MemeEditorViewController" customModule="MemeMe2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iMs-dw-h98">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
