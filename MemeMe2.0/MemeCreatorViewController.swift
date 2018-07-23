@@ -50,6 +50,16 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         appDelegate.Memes.append(memeToSave)
     }
     
+    func generateMemedImage() -> UIImage {
+        hideBars(true)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let generatedMeme = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        hideBars(false)
+        return generatedMeme
+    }
+    
     func configureTextField(_ textField: UITextField, withText: String) {
         let memeAttributes:[String: Any] = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
