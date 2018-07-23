@@ -16,6 +16,7 @@ class MemeDetailViewController: UIViewController {
     
     // MARK: - Variables and Constants
     
+    var memeToDisplay: Meme!
     var savedMeme: UIImage!
     
     // MARK: - Life Cycle
