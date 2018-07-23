@@ -63,6 +63,11 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         textField.adjustsFontSizeToFitWidth = true
     }
     
+    func hideBars(_ isHidden: Bool) {
+        navigationController?.navigationBar.isHidden = isHidden
+        toolbar.isHidden = isHidden
+    }
+    
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CG Rect
