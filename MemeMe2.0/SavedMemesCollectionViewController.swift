@@ -21,6 +21,8 @@ class SavedMemesCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        collectionView?.reloadData()
+        tabBarController?.tabBar.isHidden = false
         let space: CGFloat = 3.0
         let width = (view.frame.size.width - (2 * space)) / 3
         let height = (view.frame.size.height - (2 * space)) / 6
