@@ -10,4 +10,6 @@ import UIKit
 
 class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
+    var memeToEdit: Meme!
+    
 }
