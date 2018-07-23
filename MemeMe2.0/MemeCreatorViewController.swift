@@ -19,6 +19,8 @@ class MemeCreatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTextField(topTextField, withText: "TOP")
+        configureTextField(bottomTextField, withText: "BOTTOM")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +37,19 @@ class MemeCreatorViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+    
+    func configureTextField(_ textField: UITextField, withText: String) {
+        let memeAttributes:[String: Any] = [
+            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSAttributedStringKey.strokeWidth.rawValue: -3.0
+        ]
+        textField.defaultTextAttributes = memeAttributes
+        textField.textAlignment = .center
+        textField.text = withText
+        textField.adjustsFontSizeToFitWidth = true
     }
 
 }

@@ -168,25 +168,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E3J-79-Q94">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8d-Nt-v64">
-                                <rect key="frame" x="0.0" y="76" width="320" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8d-Nt-v64">
+                                <rect key="frame" x="0.0" y="76" width="320" height="32"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Wc9-0c-bBd"/>
+                                    <constraint firstAttribute="height" constant="32" id="Wc9-0c-bBd"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1dN-OC-xbZ">
-                                <rect key="frame" x="0.0" y="477" width="320" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1dN-OC-xbZ">
+                                <rect key="frame" x="0.0" y="431" width="320" height="32"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="qb5-7A-hUi"/>
+                                    <constraint firstAttribute="height" constant="32" id="qb5-7A-hUi"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKj-dH-dc6">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
@@ -202,7 +202,7 @@
                         <constraints>
                             <constraint firstItem="j8d-Nt-v64" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9an-Rz-3YQ"/>
                             <constraint firstItem="FKj-dH-dc6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G9p-Fa-Zsb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1dN-OC-xbZ" secondAttribute="bottom" constant="12" id="RJT-ee-p1w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1dN-OC-xbZ" secondAttribute="bottom" constant="56" id="RJT-ee-p1w"/>
                             <constraint firstItem="E3J-79-Q94" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UoA-pv-PUA"/>
                             <constraint firstAttribute="bottom" secondItem="FKj-dH-dc6" secondAttribute="bottom" id="VQf-Zl-DIt"/>
                             <constraint firstItem="E3J-79-Q94" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WzI-R9-Hha"/>
