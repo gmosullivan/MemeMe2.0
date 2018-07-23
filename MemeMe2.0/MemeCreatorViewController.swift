@@ -16,6 +16,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
     @IBOutlet weak var toolbar:UIToolbar!
     
     var memedImage: UIImage?
+    var imageSelected = false
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -30,13 +31,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme))
-        navigationItem.rightBarButtonItem?.isEnabled = false
         tabBarController?.tabBar.isHidden = true
         let photoLibraryButton = UIBarButtonItem(title: "Choose", style: .plain, target: self, action: #selector(pickImageFromLibrary))
         let cameraButton = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(takeNewImage))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let items = [photoLibraryButton, flexibleSpace, cameraButton]
         toolbar.setItems(items, animated: false)
+        navigationItem.rightBarButtonItem?.isEnabled = imageSelected
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
     
@@ -147,6 +148,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageForMemeImageView.image = image
+            imageSelected = true
         }
         dismiss(animated: true, completion: nil)
     }
