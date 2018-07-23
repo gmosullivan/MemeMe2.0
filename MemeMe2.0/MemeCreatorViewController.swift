@@ -110,6 +110,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         return true
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageForMemeImageView.image = image
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
