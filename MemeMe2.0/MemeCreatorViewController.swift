@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
+class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imageForMemeImageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
@@ -83,6 +83,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
     func unsubscribeToKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func pickImageFromLibrary() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.source = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
     
     override func textFieldDidBeginEditing(_ textField: UITextField) {
