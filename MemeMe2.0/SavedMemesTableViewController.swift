@@ -32,7 +32,7 @@ class SavedMemesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Saved Meme Cell", for: indexPath)
         let savedMeme = appDelegate.Memes[indexPath.row]
         cell.imageView?.image = savedMeme.memedImage
-        cell.textLabel?.text = savedMeme.topText + savedMeme.bottomText
+        cell.textLabel?.text = savedMeme.topText + " - " + savedMeme.bottomText
         return cell
     }
     
