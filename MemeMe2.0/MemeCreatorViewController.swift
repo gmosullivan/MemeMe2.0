@@ -92,6 +92,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @objc func takeNewImage() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
     }
