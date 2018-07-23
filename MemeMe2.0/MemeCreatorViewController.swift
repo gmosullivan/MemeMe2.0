@@ -34,7 +34,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         navigationItem.rightBarButtonItem?.isEnabled = false
         tabBarController?.tabBar.isHidden = true
         let photoLibraryButton = UIBarButtonItem(title: "Choose", style: .plain, target: self, action: #selector(pickImageFromLibrary))
-        let cameraButton = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: nil)
+        let cameraButton = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(takeNewImage))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let items = [photoLibraryButton, flexibleSpace, cameraButton]
         toolbar.setItems(items, animated: false)
