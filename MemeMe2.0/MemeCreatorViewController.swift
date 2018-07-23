@@ -26,8 +26,6 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         configureTextField(bottomTextField, withText: "BOTTOM")
     }
     
-    //Edit camera button
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
@@ -39,12 +37,17 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UINaviga
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let items = [photoLibraryButton, flexibleSpace, cameraButton]
         toolbar.setItems(items, animated: false)
-        cameraButton.isEnabled = false
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeToKeyboardNotifications()
+    }
+    
+    func save() {
+        let memeToSave = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageForMemeImageView.image!, memedImage: memedImage!)
+        appDelegate.Memes.append(memeToSave)
     }
     
     func configureTextField(_ textField: UITextField, withText: String) {
