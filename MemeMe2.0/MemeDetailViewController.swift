@@ -29,7 +29,7 @@ class MemeDetailViewController: UIViewController {
         if let savedMeme = savedMeme {
             savedMemeImageView.image = savedMeme.memedImage
         }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editMeme))
     }
     
     @objc func editMeme() {
