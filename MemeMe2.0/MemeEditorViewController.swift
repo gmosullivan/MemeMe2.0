@@ -16,6 +16,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        memeToEditImageView.image = memeToEdit.originalImage
     }
     
     override func viewWillAppear(_ animated: Bool) {
