@@ -18,4 +18,9 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved Memes", style: .plain, target: self, action: nil)
     }
     
+    @objc func returnToRootViewController() {
+        let controller = navigationController
+        controller?.popToRootViewController(animated: true)
+    }
+    
 }
