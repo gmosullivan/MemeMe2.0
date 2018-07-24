@@ -15,7 +15,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Edit Meme"
-        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved Memes", style: .plain, target: self, action: nil)
     }
     
 }
