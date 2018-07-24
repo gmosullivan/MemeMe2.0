@@ -268,18 +268,46 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2WH-hk-WnM">
                                 <rect key="frame" x="16" y="60" width="288" height="458"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BQc-b5-kBV">
+                                <rect key="frame" x="16" y="72" width="288" height="32"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="i3I-c4-dCd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4SP-FL-UvL">
+                                <rect key="frame" x="16" y="474" width="288" height="32"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="1eD-79-CaU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0VO-Cg-Oaw" firstAttribute="bottom" secondItem="2WH-hk-WnM" secondAttribute="bottom" constant="50" id="98n-3H-Z5B"/>
+                            <constraint firstItem="4SP-FL-UvL" firstAttribute="leading" secondItem="0VO-Cg-Oaw" secondAttribute="leading" constant="16" id="HjG-OF-jPf"/>
                             <constraint firstItem="0VO-Cg-Oaw" firstAttribute="trailing" secondItem="2WH-hk-WnM" secondAttribute="trailing" constant="16" id="IZu-o7-axm"/>
+                            <constraint firstItem="BQc-b5-kBV" firstAttribute="leading" secondItem="0VO-Cg-Oaw" secondAttribute="leading" constant="16" id="LTf-U4-0hK"/>
                             <constraint firstItem="2WH-hk-WnM" firstAttribute="top" secondItem="0VO-Cg-Oaw" secondAttribute="top" constant="40" id="WcO-i4-46S"/>
+                            <constraint firstItem="0VO-Cg-Oaw" firstAttribute="trailing" secondItem="4SP-FL-UvL" secondAttribute="trailing" constant="16" id="cPF-bR-WSz"/>
+                            <constraint firstItem="0VO-Cg-Oaw" firstAttribute="bottom" secondItem="4SP-FL-UvL" secondAttribute="bottom" constant="62" id="dWM-nM-uy9"/>
+                            <constraint firstItem="0VO-Cg-Oaw" firstAttribute="trailing" secondItem="BQc-b5-kBV" secondAttribute="trailing" constant="16" id="pFv-dB-heS"/>
                             <constraint firstItem="2WH-hk-WnM" firstAttribute="leading" secondItem="0VO-Cg-Oaw" secondAttribute="leading" constant="16" id="ref-XV-x1y"/>
+                            <constraint firstItem="BQc-b5-kBV" firstAttribute="top" secondItem="0VO-Cg-Oaw" secondAttribute="top" constant="52" id="ty6-0R-p0B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0VO-Cg-Oaw"/>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="4SP-FL-UvL" id="hhY-of-qei"/>
                         <outlet property="memeToEditImageView" destination="2WH-hk-WnM" id="JbM-bo-x97"/>
+                        <outlet property="topTextField" destination="BQc-b5-kBV" id="0HR-0T-VTd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CT-0e-Iq5" userLabel="First Responder" sceneMemberID="firstResponder"/>

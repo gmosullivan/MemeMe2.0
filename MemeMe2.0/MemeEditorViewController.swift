@@ -11,6 +11,8 @@ import UIKit
 class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var memeToEditImageView: UIImageView!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
     
     var memeToEdit: Meme!
     
