@@ -10,6 +10,8 @@ import UIKit
 
 class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var memeToEditImageView: UIImageView!
+    
     var memeToEdit: Meme!
     
     override func viewDidLoad() {
