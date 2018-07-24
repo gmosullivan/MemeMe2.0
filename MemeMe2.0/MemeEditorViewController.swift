@@ -25,6 +25,19 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved Memes", style: .plain, target: self, action: #selector(returnToRootViewController))
     }
     
+    func configureTextField(_ textField: UITextField, withText: String) {
+        let memeTextAttributes: [String: Any] = [
+            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+            NSAttributedStringKey.backgroundColor.rawValue: UIColor.white,
+            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSAttributedStringKey.strokeWidth.rawValue: -3.0
+        ]
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        textField.text = withText
+        textField.adjustsFontSizeToFitWidth = true
+    }
+    
     @objc func returnToRootViewController() {
         let controller = navigationController
         controller?.popToRootViewController(animated: true)
