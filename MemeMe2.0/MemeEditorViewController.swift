@@ -34,6 +34,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        unsubscribeToKeyboardNotifications()    
     }
     
     func configureTextField(_ textField: UITextField, withText: String) {
