@@ -44,6 +44,22 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         textField.adjustsFontSizeToFitWidth = true
     }
     
+    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of cgRect
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func keyboardWillShow(_ notification: Notification) {
+        if bottomTextField.isEditing {
+            view.frame.origin.y = -1 * getKeyboardHeight(notification)
+        }
+    }
+    
+    func keyboardWillHide(_ notification: Notification) {
+        view.frame.origin.y = 0
+    }
+    
     @objc func returnToRootViewController() {
         let controller = navigationController
         controller?.popToRootViewController(animated: true)
