@@ -47,4 +47,13 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         controller?.popToRootViewController(animated: true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+    }
+    
 }
