@@ -50,14 +50,19 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         return keyboardSize.cgRectValue.height
     }
     
-    func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         if bottomTextField.isEditing {
             view.frame.origin.y = -1 * getKeyboardHeight(notification)
         }
     }
     
-    func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
         view.frame.origin.y = 0
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     @objc func returnToRootViewController() {
