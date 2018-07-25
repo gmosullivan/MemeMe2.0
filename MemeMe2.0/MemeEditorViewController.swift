@@ -32,7 +32,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     func configureTextField(_ textField: UITextField, withText: String) {
         let memeTextAttributes: [String: Any] = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
-            NSAttributedStringKey.backgroundColor.rawValue: UIColor.white,
+            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
             NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
             NSAttributedStringKey.strokeWidth.rawValue: -3.0
         ]
