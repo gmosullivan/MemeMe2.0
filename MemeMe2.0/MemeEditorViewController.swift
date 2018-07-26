@@ -58,6 +58,11 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         textField.adjustsFontSizeToFitWidth = true
     }
     
+    func hideBars(_ shouldHide: Bool) {
+        navigationController?.navigationBar.isHidden = shouldHide
+        tabBarController?.tabBar.isHidden = shouldHide
+    }
+    
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of cgRect
