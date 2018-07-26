@@ -16,6 +16,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     var memeToEdit: Meme!
     var memedImage: UIImage?
+    var textEdited = false
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved Memes", style: .plain, target: self, action: #selector(returnToRootViewController))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme))
         memedImage = memeToEdit.memedImage
+        navigationItem.rightBarButtonItem?.isEnabled = textEdited
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -128,6 +130,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
+        textEdited = true
     }
     
 }
