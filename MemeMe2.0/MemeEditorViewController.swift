@@ -16,6 +16,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     var memeToEdit: Meme!
     var memedImage: UIImage?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
