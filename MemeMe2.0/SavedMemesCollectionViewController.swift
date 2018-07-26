@@ -43,6 +43,10 @@ class SavedMemesCollectionViewController: UICollectionViewController {
     
     // MARK: - Collection View Data Source Functions
 
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CollectionViewCell
         let savedMeme = appDelegate.Memes[indexPath.row]
