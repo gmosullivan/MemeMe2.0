@@ -32,9 +32,13 @@ class MemeDetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editMeme))
     }
     
+    // MARK: - Action buttons Functions (objective c)
+    
     @objc func editMeme() {
         performSegue(withIdentifier: "EditMeme", sender: nil)
     }
+    
+    // MARK: - Prepare For Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! MemeEditorViewController

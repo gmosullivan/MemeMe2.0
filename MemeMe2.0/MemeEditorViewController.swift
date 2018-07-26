@@ -10,13 +10,19 @@ import UIKit
 
 class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var memeToEditImageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    // MARK: - Variables and constants
+    
     var memeToEdit: Meme!
     var memedImage: UIImage?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +48,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         unsubscribeToKeyboardNotifications()    
     }
     
+    // MARK: - Meme Functions
+    
     func save() {
         let editedMeme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeToEdit.originalImage, memedImage: memedImage!)
         appDelegate.Memes.append(editedMeme)
@@ -56,6 +64,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         hideBars(false)
         return generatedMeme
     }
+    
+    // MARK: - UI Functions
     
     func configureTextField(_ textField: UITextField, withText: String) {
         let memeTextAttributes: [String: Any] = [
@@ -75,6 +85,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         tabBarController?.tabBar.isHidden = shouldHide
     }
     
+    // MARK: - Keyboard Notification Functions
+    
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of cgRect
@@ -89,6 +101,25 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillHide(_ notification: Notification) {
         view.frame.origin.y = 0
+    }
+    
+    // MARK: - Subscription Notifications
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeToKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    // MARK: - Action Button Functions (objective c)
+    
+    @objc func returnToRootViewController() {
+        let controller = navigationController
+        controller?.popToRootViewController(animated: true)
     }
     
     @objc func shareMeme() {
@@ -107,20 +138,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         present(activityController, animated: true, completion: nil)
     }
     
-    func subscribeToKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
-    }
-    
-    func unsubscribeToKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
-    }
-    
-    @objc func returnToRootViewController() {
-        let controller = navigationController
-        controller?.popToRootViewController(animated: true)
-    }
+    // MARK: - Text Field Delegate Functions
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
