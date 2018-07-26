@@ -15,6 +15,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bottomTextField: UITextField!
     
     var memeToEdit: Meme!
+    var memedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         subscribeToKeyboardNotifications()
         navigationItem.title = "Edit Meme"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved Memes", style: .plain, target: self, action: #selector(returnToRootViewController))
+        memedImage = memeToEdit.memedImage
     }
     
     override func viewWillDisappear(_ animated: Bool) {
