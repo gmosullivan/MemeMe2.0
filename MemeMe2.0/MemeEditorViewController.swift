@@ -32,6 +32,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         subscribeToKeyboardNotifications()
         navigationItem.title = "Edit Meme"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved Memes", style: .plain, target: self, action: #selector(returnToRootViewController))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme))
         memedImage = memeToEdit.memedImage
     }
     
