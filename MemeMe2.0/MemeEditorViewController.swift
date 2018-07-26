@@ -89,6 +89,22 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         view.frame.origin.y = 0
     }
     
+    @objc func shareMeme() {
+        let generatedMeme = generateMeme()
+        memedImage = generatedMeme
+        let activityController = UIActivityViewController(activityItems: [generatedMeme], applicationActivities: nil)
+        activityController.completionWithItemsHandler = {
+            (activity, success, items, error) in
+            if success && error == nil {
+                self.save()
+                self.dismiss(animated: true, completion: nil)
+            } else if error != nil {
+                // Handle error
+            }
+        }
+        present(activityController, animated: true, completion: nil)
+    }
+    
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
