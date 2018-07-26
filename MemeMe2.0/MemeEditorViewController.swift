@@ -40,6 +40,11 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         unsubscribeToKeyboardNotifications()    
     }
     
+    func save() {
+        let editedMeme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeToEdit.originalImage, memedImage: memedImage!)
+        appDelegate.Memes.append(editedMeme)
+    }
+    
     func configureTextField(_ textField: UITextField, withText: String) {
         let memeTextAttributes: [String: Any] = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
