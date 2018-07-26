@@ -40,7 +40,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         unsubscribeToKeyboardNotifications()    
     }
     
-    func save() {
+    @objc func save() {
         let editedMeme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeToEdit.originalImage, memedImage: memedImage!)
         appDelegate.Memes.append(editedMeme)
     }
